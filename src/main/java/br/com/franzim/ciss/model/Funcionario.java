@@ -5,6 +5,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.Valid;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+
+import org.hibernate.validator.constraints.Length;
 
 import br.com.franzim.ciss.model.form.FuncionarioForm;
 
@@ -13,11 +18,19 @@ public class Funcionario {
 
 	private static Funcionario INSTANCE =  new Funcionario();
     
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue( strategy = GenerationType.IDENTITY )
     private Long id;
+    
+    @NotBlank @Length( min = 2, max = 30 )
     private String nome;
+    
+    @NotBlank @Length( min = 2, max = 50 )
     private String sobrenome;
+    
+    @Email
     private String email;
+    
+    @Min( 11 ) @Length( min = 11, max = 11 )
     private String pis;
     
     protected Funcionario() { }

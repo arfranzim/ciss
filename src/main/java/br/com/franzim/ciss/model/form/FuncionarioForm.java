@@ -1,9 +1,9 @@
 package br.com.franzim.ciss.model.form;
 
-import javax.persistence.Enumerated;
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -11,20 +11,30 @@ import br.com.franzim.ciss.dto.FuncionarioDTO;
 import br.com.franzim.ciss.model.Funcionario;
 
 public class FuncionarioForm {
+	
+	private static FuncionarioForm INSTANCE =  new FuncionarioForm();
 
-	@NotNull @Length(min = 2, max = 30)
+	@NotBlank @Length( min = 2, max = 30 )
 	private String nome;
-	
-	@NotNull @Length(min = 2, max = 50)
+	    
+    @NotBlank @Length( min = 2, max = 50 )
     private String sobrenome;
-	
-	@Email
+	    
+    @Email
     private String email;
-	
-	@Enumerated
+    
+    @Min( 11 ) @Length( min = 11, max = 11 )
     private String pis;
 	
 	private FuncionarioForm() {}
+	
+	public static FuncionarioForm getInstance( String nome, String sobrenome, String email, String pis ) { 
+		INSTANCE.nome = nome;
+		INSTANCE.sobrenome = sobrenome;
+		INSTANCE.email = email;
+		INSTANCE.pis = pis;
+		return INSTANCE; 
+	}
 	
 	public static FuncionarioDTO converterToDTO( @Valid FuncionarioForm form ) { return FuncionarioDTO.converter(form); }
 	
