@@ -24,9 +24,16 @@ public class FuncionarioForm {
     private String email;
     
     @Min( 11 ) @Length( min = 11, max = 11 )
-    private String pis;
+    private String pis; 
+    
+    public FuncionarioForm() { }
 	
-	private FuncionarioForm() {}
+	public FuncionarioForm( String nome, String sobrenome, String email, String pis ) {
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.email = email;
+		this.pis = pis;
+	}
 	
 	public static FuncionarioForm getInstance( String nome, String sobrenome, String email, String pis ) { 
 		INSTANCE.nome = nome;

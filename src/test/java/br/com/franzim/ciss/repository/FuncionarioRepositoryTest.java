@@ -35,10 +35,10 @@ public class FuncionarioRepositoryTest {
 	
 	/*
 	@Test 
-	public void naoDeveriaCadastrarUmFuncionarioSemNome() { 
-	  Assert.assertNotNull( repository.save( Funcionario.getInstance( criaFuncionarioNomeFail( "" ) ) ) ); 
+	public void naoDeveriaCadastrarUmFuncionarioSemNome() {
+		Assert.assertNotNull( repository.save( Funcionario.getInstance( criaFuncionarioNomeFail( "" ) ) ) );
 	}
-	*/ 
+	*/
 	
 	/*
 	@Test 

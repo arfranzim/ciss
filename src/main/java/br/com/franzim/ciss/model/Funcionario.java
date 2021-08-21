@@ -5,11 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.Valid;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-
-import org.hibernate.validator.constraints.Length;
 
 import br.com.franzim.ciss.model.form.FuncionarioForm;
 
@@ -21,22 +16,15 @@ public class Funcionario {
     @Id @GeneratedValue( strategy = GenerationType.IDENTITY )
     private Long id;
     
-    @NotBlank @Length( min = 2, max = 30 )
     private String nome;
-    
-    @NotBlank @Length( min = 2, max = 50 )
     private String sobrenome;
-    
-    @Email
     private String email;
-    
-    @Min( 11 ) @Length( min = 11, max = 11 )
     private String pis;
     
     protected Funcionario() { }
     
     private Funcionario( FuncionarioForm form ) { 
-    	this.nome = form.getNome();
+    	nome = form.getNome();
     	this.sobrenome = form.getSobrenome();
 		this.email = form.getEmail();
 		this.pis = form.getPis();
@@ -44,7 +32,7 @@ public class Funcionario {
     
     private Funcionario( Long id, @Valid FuncionarioForm form ) {
 		this.id = id;
-		this.nome = form.getNome();
+		nome = form.getNome();
 		this.sobrenome = form.getSobrenome();
 		this.email = form.getEmail();
 		this.pis = form.getPis();
