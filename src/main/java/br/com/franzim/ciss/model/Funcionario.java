@@ -24,7 +24,7 @@ public class Funcionario {
     protected Funcionario() { }
     
     private Funcionario( FuncionarioForm form ) { 
-    	nome = form.getNome();
+    	this.nome = form.getNome();
     	this.sobrenome = form.getSobrenome();
 		this.email = form.getEmail();
 		this.pis = form.getPis();
@@ -32,7 +32,7 @@ public class Funcionario {
     
     private Funcionario( Long id, @Valid FuncionarioForm form ) {
 		this.id = id;
-		nome = form.getNome();
+		this.nome = form.getNome();
 		this.sobrenome = form.getSobrenome();
 		this.email = form.getEmail();
 		this.pis = form.getPis();
@@ -49,4 +49,5 @@ public class Funcionario {
     public String getSobrenome() { return sobrenome; }
     public String getEmail() { return email; }
     public String getPis( ) { return pis; }
+
 }
