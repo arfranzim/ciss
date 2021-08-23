@@ -7,7 +7,7 @@ import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Length;
 
-import br.com.franzim.ciss.dto.FuncionarioDTO;
+import br.com.franzim.ciss.controller.dto.FuncionarioDTO;
 import br.com.franzim.ciss.model.Funcionario;
 
 public class FuncionarioForm {

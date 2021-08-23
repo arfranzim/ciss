@@ -1,4 +1,4 @@
-package br.com.franzim.ciss.validation;
+package br.com.franzim.ciss.config.validation;
 
 import java.util.ArrayList;
 import java.util.List;

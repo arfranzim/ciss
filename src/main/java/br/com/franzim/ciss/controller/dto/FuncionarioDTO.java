@@ -1,4 +1,4 @@
-package br.com.franzim.ciss.dto;
+package br.com.franzim.ciss.controller.dto;
 
 import java.util.List;
 import java.util.stream.Collectors;

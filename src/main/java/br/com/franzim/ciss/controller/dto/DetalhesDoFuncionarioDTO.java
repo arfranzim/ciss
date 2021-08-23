@@ -1,7 +1,5 @@
 package br.com.franzim.ciss.controller.dto;
 
-import br.com.franzim.ciss.dto.FuncionarioDTO;
-
 public class DetalhesDoFuncionarioDTO {
 
 	private Long id;

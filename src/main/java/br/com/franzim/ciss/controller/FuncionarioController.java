@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import br.com.franzim.ciss.controller.dto.DetalhesDoFuncionarioDTO;
-import br.com.franzim.ciss.dto.FuncionarioDTO;
+import br.com.franzim.ciss.controller.dto.FuncionarioDTO;
 import br.com.franzim.ciss.model.Funcionario;
 import br.com.franzim.ciss.model.form.FuncionarioForm;
 import br.com.franzim.ciss.repository.FuncionarioRepository;
